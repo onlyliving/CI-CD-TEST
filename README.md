@@ -1,5 +1,6 @@
-#Web Scraping, CI/CD Study
+#Auto - Update data with Scraping!
 
+- `web scraping`, `CI/CD`
 - 실습 내용 : https://chanhuiseok.github.io/posts/git-1/
 - 위의 내용을 실습하여, 개인적으로 의미있는 데이터를 자동으로 모아보자.
 
