@@ -2,6 +2,9 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import os
+from datetime import datetime
+from pytz import timezone
+from github_utils import get_github_repo, upload_github_issue
 
 print(os.path.abspath('scraper.py'))
 print(os.path.abspath(__file__))
@@ -30,3 +33,14 @@ with open(os.path.join(BASE_DIR, 'bookTitle.json'), 'w+', encoding='utf-8') as j
     json.dump(data, json_file, ensure_ascii=False, indent="\t")
 
 print('\033[92m' + '>> 스크래핑 끝' + '\033[0m')
+
+access_token = os.environ['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']
+repository_name = "ci-cd-test"
+
+seoul_timezone = timezone('Asia/Seoul')
+today = datetime.now(seoul_timezone)
+today_date = today.strftime("%Y년 %m월 %d일")
+issue_title = f"YES24 IT 신간 도서 알림({today_date})"
+
+repo = get_github_repo(access_token, repository_name)
+upload_github_issue(repo, issue_title, data)
