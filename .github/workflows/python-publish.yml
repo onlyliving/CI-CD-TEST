@@ -11,6 +11,8 @@ name: Run Scraper - Update Data
 on:
   schedule:
     - cron: '30 10 * * *' # 주기적으로 실행하기 위한 스케줄링 - cron 설정 (매일 오전 10시 30분)
+  push:
+    branchs: [master]
 
 jobs:
   deploy:
