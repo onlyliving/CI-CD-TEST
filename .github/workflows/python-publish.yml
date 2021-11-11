@@ -36,7 +36,7 @@ jobs:
       run: |
         git config --local user.email "greensohee88@naver.com"
         git config --local user.name "soheekim"
-        git add news.json
+        git add bookTitle.json
         git commit -m "auto - update data with scraping"
     - name: Push
       uses: ad-m/github-push-action@master
