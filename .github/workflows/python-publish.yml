@@ -10,7 +10,7 @@ name: Run Scraper - Update Data
 
 on:
   schedule:
-    - cron: '30 10 * * *' # 주기적으로 실행하기 위한 스케줄링 - cron 설정 (매일 오전 10시 30분)
+    - cron: '0 0 1 * *' # 주기적으로 실행하기 위한 스케줄링 - 시간대 기준: UTC (매주 1일 오전 9시으로 하려면 오전 0시로 설정해야 함)
   push:
     branchs: [master]
 
